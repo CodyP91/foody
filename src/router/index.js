@@ -1,32 +1,50 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import ClientSignUp from '../views/ClientSignUp.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import ClientSignUp from '@/views/ClientSignUp.vue';
+import ClientLogin from '@/views/ClientLogin.vue';
+import ClientProfile from '@/views/ClientProfile.vue';
+import RestaurantOpenPage from '@/views/RestaurantOpenPage.vue';
+import RestaurantLogin from '@/views/RestaurantLogin.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
     path: '/clientsignup',
     name: 'clientsignup',
-    component: ClientSignUp
-  }
-]
+    component: ClientSignUp,
+  },
+  {
+    path: '/clientlogin',
+    name: 'clientlogin',
+    component: ClientLogin,
+  },
+  {
+    path: '/clientprofile',
+    name: 'clientprofile',
+    component: ClientProfile,
+  },
+  {
+    path: '/restaurantopenpage',
+    name: 'restaurantopenpage',
+    component: RestaurantOpenPage,
+  },
+  {
+    path: '/restaurantlogin',
+    name: 'restaurantlogin',
+    component: RestaurantLogin,
+  },
+  {
+    path: '/',
+    redirect: '/clientlogin', // Redirect to the client login page by default
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+new Vue({
+  router,
+  render: (h) => h('router-view'), // Render the router-view component
+}).$mount('#app');
