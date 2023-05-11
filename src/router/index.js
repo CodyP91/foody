@@ -5,6 +5,9 @@ import ClientLogin from '@/views/ClientLogin.vue';
 import ClientProfile from '@/views/ClientProfile.vue';
 import RestaurantOpenPage from '@/views/RestaurantOpenPage.vue';
 import RestaurantLogin from '@/views/RestaurantLogin.vue';
+import RestaurantProfile from '@/views/RestaurantProfile.vue';
+import ShoppingCart from '@/views/ShoppingCart.vue';
+import ClientOrderPage from '@/views/ClientOrderPage.vue';
 
 Vue.use(VueRouter);
 
@@ -35,8 +38,23 @@ const routes = [
     component: RestaurantLogin,
   },
   {
+    path: '/restaurantprofile',
+    name: 'restaurantprofile',
+    component: RestaurantProfile,
+  },
+  {
+    path: '/shoppingcart',
+    name: 'shoppingcart',
+    component: ShoppingCart,
+  },
+  {
+    path: '/clientorderpage',
+    name: 'clientorderpage',
+    component: ClientOrderPage,
+  },
+  {
     path: '/',
-    redirect: '/clientlogin', // Redirect to the client login page by default
+    redirect: '/clientlogin', 
   },
 ];
 
@@ -46,5 +64,5 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: (h) => h('router-view'), // Render the router-view component
+  render: (h) => h('router-view'), 
 }).$mount('#app');

@@ -12,12 +12,14 @@
       <button type="submit">Log In</button>
     </form>
     <div class="links-container">
-      <router-link to="/clientprofile" class="link">Go to Client Profile</router-link>
-      <router-link to="/clientsignup" class="link">Don't have an account? Sign Up</router-link>
-      <router-link to="/restaurantlogin" class="link">Restaurant Login</router-link>
-      <router-link to="/restaurantprofile" class="link">Restaurant Profile</router-link>
+      <router-link to="/clientprofile" class="link">Go to Client Profile</router-link> |
+      <router-link to="/clientsignup" class="link">Don't have an account? Sign Up</router-link> |
+      <router-link to="/restaurantlogin" class="link">Restaurant Login</router-link> |
+      <router-link to="/restaurantprofile">Go to Restaurant Profile</router-link> |
+      <router-link to="/shoppingcart">Shopping Cart</router-link> |
+      <router-link to="/clientorderpage">Client Order Page</router-link> |
     </div>
-    <button @click="logOut">Log Out</button>
+
   </div>
 </template>
 
